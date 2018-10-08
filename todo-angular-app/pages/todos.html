@@ -1,0 +1,36 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4"> {{ user ? user.userName + '\'s Todo' : 'My Todos' }} </h1>
+    <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's
+        built with default Bootstrap components and utilities with little customization.</p>
+</div>
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center todo" ng-repeat="todo in todos">
+            <span>
+                <input type="checkbox" ng-model="todo.completed" ng-change="updateTodo(todo)">
+                <span ng-class="{'completed text-danger' : todo.completed }"> {{ todo.title }} </span>
+            </span>
+            <span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" ng-click="deleteTodo(todo.id)">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                
+            </span>
+
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <!--<form ng-submit="saveTodo()">-->
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Todo title" ng-model="todo.title" />
+                <div class="input-group-append">
+                    <span class="btn btn-primary" ng-click="saveTodo()"> Add Todo </span>
+                </div>
+            </div>
+            <!--</form>-->
+        </li>
+        <li class="list-group-item text-danger" ng-if="!todos || todos.length === 0">No TODO available to display</li>
+    </ul>
+</div>

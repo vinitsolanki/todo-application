@@ -1,0 +1,17 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Users' Todos</h1>
+    <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's
+        built with default Bootstrap components and utilities with little customization.</p>
+</div>
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item todo" ng-repeat="todo in todos">
+            <span class="pull-left" ng-class="{'completed text-danger' : todo.completed }"> {{ todo.title }} | <a ui-sref="todos({userId : todo.userId })">
+                {{ todo.username }}</a> </span>
+            <span class="badge pull-right" ng-class="{'badge-success' : !todo.completed , 'badge-danger' : todo.completed }">{{ todo.completed
+                ? 'Done' : 'Not Done' }} </span>
+        </li>
+        <li class="list-group-item text-danger" ng-if="!todos || todos.length === 0">No TODO available to display</li>
+    </ul>
+</div>
