@@ -22,12 +22,12 @@ frontend application will start on http://localhost:9090
 #Users
 
 1. Admin 
-  username : admin
-  password : password
+  `username : admin
+  password : password`
 2. User 1
-  username: vinitsolanki07
-  password: vinit@123
+  `username: vinitsolanki07
+  password: vinit@123`
 3. User 2
-  username: vinitsolanki369
-  password: vinit@123
+  `username: vinitsolanki369
+  password: vinit@123`
   
